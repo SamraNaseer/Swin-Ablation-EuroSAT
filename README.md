@@ -108,11 +108,12 @@ The same training configuration is also maintained between the two experiments t
 
 ### Installation
 Clone the repository and install the required dependencies:
-git clone <YOUR-GITHUB-REPOSITORY-URL>
-cd <YOUR-REPOSITORY-NAME>
+<img width="345" height="47" alt="image" src="https://github.com/user-attachments/assets/493c2ef3-dddb-4949-8d15-870917c91638" />
+
 
 Install the dependencies:
-pip install -r requirements.txt
+<img width="260" height="17" alt="image" src="https://github.com/user-attachments/assets/203a5ce5-713f-45ea-a359-8cce81f43467" />
+
 
 A CUDA-enabled PyTorch installation is recommended when an NVIDIA GPU is available.
 ### Running the Experiment
