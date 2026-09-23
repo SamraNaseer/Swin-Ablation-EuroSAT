@@ -1,0 +1,2 @@
+best_epoch,best_validation_accuracy,best_validation_loss,final_train_accuracy,final_validation_accuracy,final_train_loss,final_validation_loss,maximum_avg_grad_norm,maximum_avg_global_grad_norm,maximum_global_grad_norm
+26,99.0,0.0505333605580084,98.60648148148148,98.98148148148148,0.0499008262931925,0.0505425285265597,0.6898008173380702,22.7301572893284,139.9586944580078
