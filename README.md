@@ -84,22 +84,8 @@ Neither experiment exceeded the 10³ gradient-norm threshold.
 Gradient magnitudes generally decreased as training progressed.
 
 ### Repository Structure
-Swin-Ablation/
-│
-├── README.md
-├── requirements.txt
-├── .gitignore
-│
-├── Swin_Ablation.ipynb
-│
-├── splits/
-│   ├── train_indices.npy
-│   └── val_indices.npy
-│
-└── output/
-    ├── baseline_swin_t/
-    ├── ablation_window5_silu/
-    └── comparison_plots/
+<img width="287" height="415" alt="image" src="https://github.com/user-attachments/assets/b477da7b-1387-4059-a82f-058a0b18de83" />
+
 ### Installation
 Install the required Python packages:
 pip install -r requirements.txt
