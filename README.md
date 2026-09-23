@@ -44,51 +44,78 @@ The two architectural changes are evaluated together as one combined ablation.
 
 
 ### Data Augmentation
-Training:
+Training Transformations
+The training data uses:
 - RandomResizedCrop(224)
-- RandomHorizontalFlip
+- RandomHorizontalFlip()
 - ImageNet normalization
-Validation:
-- Resize to 224×224
+Validation Transformations
+The validation data uses:
+- Resize to 224 × 224
 - ImageNet normalization
 Normalization:
 Mean = [0.485, 0.456, 0.406]
 Std  = [0.229, 0.224, 0.225]
 ### Results
 ### Baseline Swin-T
-Best validation accuracy: 99.00%
-Best epoch: 26
-Final validation accuracy: 98.98%
-Maximum recorded global gradient norm: 139.96
-### Swin-T 5×5 + SiLU
-Best validation accuracy: 98.91%
-Best epoch: 25
-Final validation accuracy: 98.89%
-Maximum recorded global gradient norm: 126.90
+| Metric                       |     Result |
+| ---------------------------- | ---------: |
+| Best Validation Accuracy     | **99.00%** |
+| Best Epoch                   |     **26** |
+| Final Validation Accuracy    | **98.98%** |
+| Maximum Global Gradient Norm | **139.96** |
 
-The difference in best validation accuracy is approximately 0.09 percentage points.
+### Swin-T 5×5 + SiLU
+| Metric                       |     Result |
+| ---------------------------- | ---------: |
+| Best Validation Accuracy     | **98.91%** |
+| Best Epoch                   |     **25** |
+| Final Validation Accuracy    | **98.89%** |
+| Maximum Global Gradient Norm | **126.90** |
+
+The difference between the best validation accuracies is approximately:
+
+98.91% - 99.00% = -0.09 percentage points
+
+Thus, in this single controlled experiment, the modified architecture did not produce a higher validation accuracy than the baseline.
+
+The difference is small, and this experiment does not provide sufficient evidence to claim that the architectural modifications are statistically better or worse across different random seeds.
 
 ### Gradient Clipping Analysis
-
-Gradient clipping was applied using a maximum norm of 1.0.
-
-The recorded global gradient norms were above 1.0, particularly during the early training epochs, indicating that gradient clipping was relevant during optimization.
-
+Gradient clipping was applied with a maximum norm of:1.0
+The recorded global gradient norms were greater than 1.0, particularly during the early training stages. Therefore, gradient clipping was relevant during optimization.
 The maximum recorded global gradient norms were:
 
-Baseline: 139.96
-Ablation: 126.90
+Baseline       : 139.96
+5×5 + SiLU     : 126.90
 
-Neither experiment exceeded the 10³ gradient-norm threshold.
+Neither experiment exceeded the assignment's threshold of:10³
+The gradient magnitudes generally decreased as training progressed.It is important to distinguish between the average per-parameter gradient norm and the global gradient norm. The global norm is the quantity used to determine whether the clipping threshold is exceeded.
+### Reproducibility
+The experiments use fixed random seeds:
+Dataset split seed = 42
+Model/training seed = 123
 
-Gradient magnitudes generally decreased as training progressed.
+The same train-validation split is used for both the baseline and ablation experiments.
 
+The same training configuration is also maintained between the two experiments to provide a controlled comparison.
+Swin_Ablation.ipynb = full implementation, experiments, explanations, visualizations.
+run_baseline.py = reproducible baseline run.
+run_ablation.py = reproducible modified-model run.
+make_plots.py = regenerate the comparison figures.
 ### Repository Structure
-<img width="287" height="415" alt="image" src="https://github.com/user-attachments/assets/b477da7b-1387-4059-a82f-058a0b18de83" />
+<img width="652" height="802" alt="image" src="https://github.com/user-attachments/assets/a88c72d3-f87e-4190-bd32-ff14a6499a8a" />
 
 ### Installation
-Install the required Python packages:
-pip install -r requirements.txt
+Clone the repository and install the required dependencies:
+
+- git clone <YOUR-GITHUB-REPOSITORY-URL>
+- cd <YOUR-REPOSITORY-NAME>
+
+Install the dependencies:
+
+- pip install -r requirements.txt
+
 A CUDA-enabled PyTorch installation is recommended when an NVIDIA GPU is available.
 ### Running the Experiment
 1. Clone this repository.
