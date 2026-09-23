@@ -99,22 +99,20 @@ Model/training seed = 123
 The same train-validation split is used for both the baseline and ablation experiments.
 
 The same training configuration is also maintained between the two experiments to provide a controlled comparison.
-- Swin_Ablation.ipynb = full implementation, experiments, explanations, visualizations.
-- run_baseline.py = reproducible baseline run.
-- run_ablation.py = reproducible modified-model run.
-- make_plots.py = regenerate the comparison figures.
+#### Swin_Ablation.ipynb = full implementation, experiments, explanations, visualizations.
+#### run_baseline.py = reproducible baseline run.
+#### run_ablation.py = reproducible modified-model run.
+#### make_plots.py = regenerate the comparison figures.
 ### Repository Structure
 <img width="652" height="802" alt="image" src="https://github.com/user-attachments/assets/a88c72d3-f87e-4190-bd32-ff14a6499a8a" />
 
 ### Installation
 Clone the repository and install the required dependencies:
-
 git clone <YOUR-GITHUB-REPOSITORY-URL>
 cd <YOUR-REPOSITORY-NAME>
 
 Install the dependencies:
-
-- pip install -r requirements.txt
+pip install -r requirements.txt
 
 A CUDA-enabled PyTorch installation is recommended when an NVIDIA GPU is available.
 ### Running the Experiment
