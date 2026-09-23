@@ -1,4 +1,4 @@
-<img width="737" height="335" alt="image" src="https://github.com/user-attachments/assets/e6e6c7f9-ea9f-4a00-885a-865d69eb20a8" /><img width="737" height="335" alt="image" src="https://github.com/user-attachments/assets/04bd3e80-3b8b-499e-b648-a16d53bcd98e" /># Swin-Ablation-EuroSAT
+# Swin-Ablation-EuroSAT
 This presents an end-to-end computer vision experimentation pipeline for land-use and land-cover classification using the EuroSAT RGB dataset and the Swin-Tiny Transformer (Swin-T) architecture. 
 ## Overview
 This project implements a controlled baseline-versus-ablation experiment using a pretrained Swin Transformer-Tiny (Swin-T) for EuroSAT RGB satellite image classification.
@@ -36,6 +36,7 @@ The modified Swin-T uses:
 - Pretrained weight transfer
 - Resized relative-position bias tables for the changed window size
 The two architectural changes are evaluated together as one combined ablation.
+<img width="737" height="335" alt="image" src="https://github.com/user-attachments/assets/e6e6c7f9-ea9f-4a00-885a-865d69eb20a8" />
 ## Training Configuration
 
 | Parameter          | Value            |
