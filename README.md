@@ -128,11 +128,6 @@ A CUDA-enabled PyTorch installation is recommended when an NVIDIA GPU is availab
 7. Experimental results and plots are saved under:
 -output/
 
-### Reproducibility
-The experiments use fixed random seeds:
-Dataset split seed: 42
-Model/training seed: 123
-The same train-validation split and training hyperparameters are used for both the baseline and ablation experiments.
 ### Limitations
 The 5×5 window and SiLU changes were evaluated together. Therefore, this experiment cannot independently determine the contribution of each modification.
 A more complete factorial ablation would separately evaluate:
