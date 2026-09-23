@@ -23,6 +23,7 @@ Classes:
 - Residential
 - River
 - SeaLake
+  
 The dataset is not included in this repository because of its size.
 Load via torchvision.datasets.EuroSAT(root=’./data’, split=’train’,transform=..., download=True).
 ## Baseline Model
@@ -36,22 +37,11 @@ The modified Swin-T uses:
 - Pretrained weight transfer
 - Resized relative-position bias tables for the changed window size
 The two architectural changes are evaluated together as one combined ablation.
-<img width="737" height="335" alt="image" src="https://github.com/user-attachments/assets/e6e6c7f9-ea9f-4a00-885a-865d69eb20a8" />
 ## Training Configuration
+<img width="737" height="335" alt="image" src="https://github.com/user-attachments/assets/e6e6c7f9-ea9f-4a00-885a-865d69eb20a8" />
 
-| Parameter          | Value            |
-|--------------------|------------------|
-| Optimizer          | AdamW            |
-| Learning Rate      | 5e-5             |
-| Weight Decay       | 1e-4             |
-| Batch Size         | 32               |
-| Epochs             | 30               |
-| Warmup             | 5 epochs         |
-| Scheduler          | Cosine Annealing |
-| Image Size         | 224×224          |
-| Gradient Clipping  | 1.0              |
-| Split Seed         | 42               |
-| Model Seed         | 123              |
+
+
 
 ### Data Augmentation
 Training:
